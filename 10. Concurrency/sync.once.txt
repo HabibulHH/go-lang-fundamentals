@@ -1,0 +1,19 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func initSomething() {
+	fmt.Println("Initializing...")
+}
+
+var once sync.Once
+
+func main() {
+	for range 5 {
+		// initSomething()
+		once.Do(initSomething)
+	}
+}

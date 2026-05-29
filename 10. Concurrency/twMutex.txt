@@ -1,0 +1,32 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+// | Function         | Type      | Purpose             | Readers Allowed | Writers Allowed |
+// | ---------------- | --------- | ------------------- | --------------- | --------------- |
+// | `mu.Lock()`      | `Mutex`   | Full exclusive lock | 0               | 1               |
+// | `mu.Unlock()`    | `Mutex`   | Release lock        | —               | —               |
+// | `rwmu.RLock()`   | `RWMutex` | Read-only lock      | Multiple        | 0               |
+// | `rwmu.RUnlock()` | `RWMutex` | Release read lock   | —               | —               |
+// | `rwmu.Lock()`    | `RWMutex` | Write lock          | 0               | 1               |
+// | `rwmu.Unlock()`  | `RWMutex` | Release write lock  | —               | —               |
+
+var balance int
+var rwmu sync.RWMutex
+
+func main() {
+	for range 3 {
+		go func() {
+			rwmu.RLock()
+			balance++
+			rwmu.RUnlock()
+		}()
+	}
+
+	time.Sleep(time.Second)
+	fmt.Println("Balance:", balance)
+}

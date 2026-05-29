@@ -1,0 +1,56 @@
+package main
+
+import "fmt"
+
+// var aSlice = []int{1, 2, 3}
+// var anArray = [3]int{1, 2, 3}
+// var anArray2 = [...]int{1, 2, 3}
+
+// var aMap = map[string]int{
+// 	"a": 1,
+// 	"b": 2,
+// }
+
+// var aVar int = 6
+
+// {
+//   "employee": {
+//     "id": 1024,
+//     "name": "Sarah Jenkins",
+//     "department": "Engineering",
+//     "isActive": true,
+//     "skills": ["JavaScript", "Python", "React"],
+//     "contact": {
+//       "email": "sarah.j@company.com",
+//       "phone": "+880-1700-000000"
+//     }
+//   }
+// }
+
+func main() {
+	fmt.Println("Chapter 6: Composite Types")
+
+	// any / interface{}
+
+	var value any
+
+	value = 10
+	fmt.Println(value)
+
+	value = true
+	fmt.Println(value)
+
+	value = "hello"
+	fmt.Println(value)
+
+	data := []any{10, true, "hello", 3.14}
+	fmt.Println(data)
+
+	user := map[string]any{
+		"name":   "Hira",
+		"age":    30,
+		"height": 5.10,
+		"skills": []string{"Go", "Rust", "JavaScript"},
+	}
+	fmt.Println(user)
+}

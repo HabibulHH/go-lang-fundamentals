@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Chapter 3: Operators")
+
+	fmt.Println("Comparison Ops")
+
+	fmt.Println(10 == 10)
+	fmt.Println(10 == 11)
+
+	fmt.Println(20 != 20)
+	fmt.Println(20 != 5)
+
+	fmt.Println(50 > 5)
+
+	fmt.Println(50 < 5)
+
+	fmt.Println(50 >= 50)
+	fmt.Println(50 >= 60)
+	fmt.Println(50 >= 5)
+
+	fmt.Println(10 <= 9)
+	fmt.Println(10 <= 10)
+	fmt.Println(10 <= 11)
+}

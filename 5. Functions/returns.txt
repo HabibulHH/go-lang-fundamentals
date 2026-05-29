@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+func calculate(a int, b int) (int, int) {
+	sum := a + b
+	diff := a - b
+	return sum, diff
+}
+
+func main() {
+	fmt.Println("Chapter 5: Functions")
+	sum, _ := calculate(6, 10)
+	sum, diff := calculate(6, 10)
+	fmt.Println(sum)
+	fmt.Println(diff)
+}

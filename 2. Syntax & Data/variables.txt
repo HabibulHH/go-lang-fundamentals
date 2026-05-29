@@ -1,0 +1,61 @@
+package main
+
+import "fmt"
+
+// var stringOne string = "abc d e f"
+// var numOne int = 1
+// var floatOne float64 = 10.1
+// var boolOne bool = true
+
+var z, c string = "abc", "def"
+var k, j = 1, 2
+
+func main() {
+	fmt.Println("Chapter 2: Syntax & Data Containers")
+
+	// var stringOne string = "abc d e f"
+	// var numOne int = 1
+	// var floatOne float64 = 10.1
+	// var boolOne bool = true
+
+	// var stringOne = "abc d e f"
+	// var numOne = 1
+	// var floatOne = 10.1
+	// var boolOne = true
+
+	// var stringOne string
+	// var numOne int
+	// var floatOne float64
+	// var boolOne bool
+
+	stringOne := "hello how are you"
+	numOne := 1
+	floatOne := 100.1
+	boolOne := true
+
+	stringOne = "A new chnaged string"
+	numOne = 2
+	floatOne = 500.2
+	boolOne = false
+
+	a, b := "abc", "def"
+	x, y := 1, 2
+
+	fmt.Println(stringOne)
+	fmt.Println(numOne)
+	fmt.Println(floatOne)
+	fmt.Println(boolOne)
+
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(x)
+	fmt.Println(y)
+	fmt.Println(x)
+	fmt.Println(y)
+	fmt.Println(x)
+	fmt.Println(y)
+	fmt.Println(z)
+	fmt.Println(c)
+	fmt.Println(k)
+	fmt.Println(j)
+}

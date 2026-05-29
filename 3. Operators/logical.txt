@@ -1,0 +1,16 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Chapter 3: Operators")
+
+	fmt.Println("Logical Ops")
+
+	fmt.Println(10 > 5 && 5 < 10)
+	fmt.Println(10 > 5 && 5 < 4)
+
+	fmt.Println(6 < 10 || 5 > 10)
+
+	fmt.Println(!(10 > 5))
+}

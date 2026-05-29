@@ -1,0 +1,13 @@
+package main
+
+import "fmt"
+
+func greet() {
+	fmt.Println("A basic named function")
+}
+
+func main() {
+	fmt.Println("Chapter 5: Functions")
+
+	greet()
+}

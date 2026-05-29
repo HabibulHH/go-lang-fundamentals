@@ -1,0 +1,53 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Chapter 6: Composite Types")
+
+	emptyMap := map[string]int{}
+	fmt.Println(emptyMap)
+
+	people := map[string]int{
+		"Hira":    30,
+		"Nuaiman": 29,
+	}
+	fmt.Println(people)
+
+	ages := make(map[string]int)
+	ages["John"] = 20
+	ages["Bob"] = 21
+	fmt.Println(ages)
+
+	delete(ages, "Bob")
+	fmt.Println(ages)
+
+	value, exists := ages["John"]
+	fmt.Println(value)
+	fmt.Println(exists)
+
+	fmt.Println(len(ages))
+
+	students := map[string][]string{
+		"fruits":  {"apples", "grapes", "oranges"},
+		"gadgets": {"mobiles", "laptops", "peripherals"},
+	}
+	fmt.Println(students)
+
+	users := map[int]map[string]string{
+		1: {
+			"email": "abc@examople.com",
+			"name":  "john",
+		},
+
+		2: {
+			"email": "def@examople.com",
+			"name":  "bob",
+		},
+	}
+	fmt.Println(users)
+
+	for key, value := range users {
+		fmt.Println(key, value)
+	}
+}

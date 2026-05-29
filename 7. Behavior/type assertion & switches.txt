@@ -1,0 +1,26 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Chapter 7: Behavior")
+
+	var data any = "Hello"
+
+	value, ok := data.(string)
+	fmt.Println("Value of data:", value)
+	fmt.Println("Is String?", ok)
+
+	// -------------------------------------
+
+	var data2 any = true
+
+	switch v := data2.(type) {
+	case string:
+		fmt.Println("Text: ", v)
+	case int:
+		fmt.Println("Integer:", v)
+	default:
+		fmt.Println("Unknown")
+	}
+}

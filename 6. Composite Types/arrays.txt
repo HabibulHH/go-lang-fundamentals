@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Chapter 6: Composite Types")
+
+	var arr1 [5]int
+	arr2 := [5]int{1, 2, 3, 4, 5}
+	arr3 := [...]int{1, 2, 3, 4, 5}
+
+	l1 := len(arr1)
+	l2 := len(arr2)
+
+	fmt.Println(arr1)
+	fmt.Println(arr2)
+	fmt.Println(arr3)
+
+	fmt.Println(l1)
+	fmt.Println(l2)
+	fmt.Println(len(arr3))
+
+	for i := 0; i < len(arr1); i++ {
+		fmt.Println(i)
+	}
+
+	for i, v := range arr3 {
+		fmt.Println(i, v)
+	}
+
+	a := [5]int{1, 2, 3, 4, 5}
+	b := a
+	b[0] = 11
+	fmt.Println(a)
+	fmt.Println(b)
+}

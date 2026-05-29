@@ -1,0 +1,33 @@
+package main
+
+import "fmt"
+
+type Driveable interface {
+	Drive()
+}
+
+type EV struct{}
+
+func (e EV) Drive() {
+	fmt.Println("EV is moving")
+}
+
+type TV struct{}
+
+func (t TV) Drive() {
+	fmt.Println("TV is moving")
+}
+
+func startDriving(d Driveable) {
+	d.Drive()
+}
+
+func main() {
+	fmt.Println("Chapter 7: Behavior")
+
+	ev := EV{}
+	tv := TV{}
+
+	startDriving(ev)
+	startDriving(tv)
+}

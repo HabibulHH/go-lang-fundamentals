@@ -1,0 +1,35 @@
+package main
+
+import "fmt"
+
+type BankAccount struct {
+	Owner   string
+	Balance float64
+}
+
+// Regular function - not tied to BankAccount
+func deposit(b BankAccount, amount float64) BankAccount {
+	b.Balance += amount
+	return b
+}
+
+// Regular function - not tied to BankAccount
+func withdraw(b BankAccount, amount float64) BankAccount {
+	b.Balance -= amount
+	return b
+}
+
+func main() {
+	fmt.Println("Chapter 7: Behavior")
+
+	account := BankAccount{
+		Owner:   "Sarah",
+		Balance: 1000,
+	}
+
+	account = deposit(account, 500)
+	fmt.Println(account.Balance)
+
+	account = withdraw(account, 200)
+	fmt.Println(account.Balance)
+}

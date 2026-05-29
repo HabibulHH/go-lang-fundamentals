@@ -1,0 +1,46 @@
+package main
+
+import (
+	"fmt"
+)
+
+type Contact struct {
+	Phone int
+	Email string
+}
+
+type User struct {
+	Name     string
+	Age      int
+	IsOnline bool
+	Contact  Contact
+}
+
+func main() {
+	fmt.Println("Chapter 6: Composite Types")
+
+	user1 := User{
+		Name:     "Hira",
+		Age:      30,
+		IsOnline: true,
+		Contact: Contact{
+			Phone: 011111,
+			Email: "hira@example.com",
+		},
+	}
+	fmt.Println(user1)
+
+	user2 := User{}
+	user2.Name = "PocketSchool"
+	user2.Contact.Phone = 011111111
+	fmt.Println(user2)
+
+	person := struct {
+		Name  string
+		Phone string
+	}{
+		Name:  "abc",
+		Phone: "011",
+	}
+	fmt.Println(person)
+}

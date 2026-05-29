@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+type BankAccount struct {
+	Owner   string
+	Balance float64
+}
+
+func (b *BankAccount) deposit(amount float64) {
+	b.Balance += amount
+}
+
+func (b *BankAccount) withdraw(amount float64) {
+	b.Balance -= amount
+}
+
+func main() {
+	fmt.Println("Chapter 7: Behavior")
+
+	account := BankAccount{
+		Owner:   "Sarah",
+		Balance: 1000,
+	}
+
+	account.deposit(1000)
+	fmt.Println(account)
+
+	account.withdraw(200)
+	fmt.Println(account)
+}

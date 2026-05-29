@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Chapter 4: Conditional Statements")
+
+	age := 81
+
+	if age <= 19 {
+		fmt.Println("teen")
+	} else if age >= 20 && age < 50 {
+		fmt.Println("adult")
+	} else {
+		fmt.Println("old")
+	}
+
+	fmt.Println("Thank you")
+}

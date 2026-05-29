@@ -1,0 +1,10 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	panic("panic triggered")
+	fmt.Println("Chapter 8: Error Handling")
+}

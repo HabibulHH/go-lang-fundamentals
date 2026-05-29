@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func sayHello() {
+	fmt.Println("Hello")
+}
+
+func main() {
+	fmt.Println("Chapter 10: Concurrency")
+
+	go sayHello()
+	go func() {
+		fmt.Println("Hello 2")
+	}()
+
+	time.Sleep(time.Second * 1)
+
+	fmt.Println("Bye")
+}

@@ -1,0 +1,35 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	jobs := make(chan string, 2)
+
+	// Slow worker
+	go func() {
+		for job := range jobs {
+			fmt.Println("Worker started:", job)
+
+			time.Sleep(2 * time.Second)
+
+			fmt.Println("Worker finished:", job)
+		}
+	}()
+
+	jobs <- "Job 1"
+	fmt.Println("Sent Job 1")
+
+	jobs <- "Job 2"
+	fmt.Println("Sent Job 2")
+
+	fmt.Println("Queue full. Waiting to send Job 3...")
+
+	jobs <- "Job 3"
+
+	fmt.Println("Sent Job 3")
+
+	time.Sleep(7 * time.Second)
+}

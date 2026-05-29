@@ -1,0 +1,52 @@
+package main
+
+// | Operation                       | Can Block? |
+// | ------------------------------- | ---------- |
+// | `time.Sleep()`                  | Yes        |
+// | Channel send                    | Yes        |
+// | Channel receive                 | Yes        |
+// | `Mutex.Lock()`                  | Yes        |
+// | `select`                        | Usually    |
+// | Buffered send (space available) | No         |
+
+func main() {
+	// // 1. Blocking with time.Sleep
+	// fmt.Println("Start")
+
+	// time.Sleep(3 * time.Second)
+
+	// fmt.Println("End")
+
+	// ---------------------------------------------
+
+	// // 2. Blocking with channel RECEIVE
+	// fmt.Println("Start")
+
+	// ch := make(chan int)
+
+	// go func() {
+	// 	time.Sleep(2 * time.Second)
+	// 	ch <- 42
+	// }()
+
+	// fmt.Println("Waiting for value...")
+	// value := <-ch // BLOCKS here until value arrives
+	// fmt.Println("Received:", value)
+
+	// ---------------------------------------------
+
+	// // 3. Blocking with channel SEND (buffered = 0 case)
+	// fmt.Println("Start")
+
+	// ch2 := make(chan int)
+
+	// go func() {
+	// 	fmt.Println("Receiver ready")
+	// 	time.Sleep(2 * time.Second)
+	// 	fmt.Println("Got:", <-ch2)
+	// }()
+
+	// fmt.Println("Sending value...")
+	// ch2 <- 100 // BLOCKS until receiver is ready
+	// fmt.Println("Sent value")
+}

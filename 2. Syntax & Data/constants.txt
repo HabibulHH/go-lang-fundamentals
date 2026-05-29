@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+const gender = "male"
+
+const (
+	AppName = "PocketSchool"
+	Version = 1.0
+	MaxUser = 5000
+)
+
+func main() {
+	fmt.Println("Chapter 2: Syntax & Data Containers")
+
+	const country = "Bangladesh"
+
+	fmt.Println(gender)
+	fmt.Println(country)
+
+	fmt.Println(AppName)
+	fmt.Println(Version)
+	fmt.Println(MaxUser)
+}

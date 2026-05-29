@@ -1,0 +1,48 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Chapter 4: Conditional Statements")
+
+	age := 13
+
+	// switch age {
+	// case 13:
+	// 	fmt.Println("teen")
+	// case 30:
+	// 	fmt.Println("adult")
+	// default:
+	// 	fmt.Println("old")
+	// }
+
+	// switch {
+	// case age <= 19:
+	// 	fmt.Println("teen")
+	// case age <= 50:
+	// 	fmt.Println("adult")
+	// default:
+	// 	fmt.Println("old")
+	// }
+
+	// switch age {
+	// case 1, 2, 3, 17, 18, 19:
+	// 	fmt.Println("teen")
+	// default:
+	// 	fmt.Println("old")
+	// }
+
+	switch age {
+	case 13:
+		fmt.Println("teen")
+		fallthrough
+	case 18:
+		fmt.Println("abc")
+	case 30:
+		fmt.Println("adult")
+	default:
+		fmt.Println("old")
+	}
+
+	fmt.Println("Thank you")
+}

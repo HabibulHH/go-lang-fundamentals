@@ -1,0 +1,45 @@
+package main
+
+import "fmt"
+
+// Array vs Slice
+// | Feature     | Array    | Slice      |
+// | ----------- | -------- | ---------- |
+// | Size        | Fixed    | Dynamic    |
+// | Type        | `[n]int` | `[]int`    |
+
+func main() {
+	fmt.Println("Chapter 6: Composite Types")
+
+	// var arr1 [5]int
+	// arr2 := [5]int{1, 2, 3, 4, 5}
+	// arr3 := [...]int{1, 2, 3, 4, 5}
+	// ---------------------------------------
+
+	s1 := []int{}
+	fmt.Println(s1)
+
+	s2 := []int{1, 2, 3, 4, 5}
+	fmt.Println(s2)
+
+	// s3 := make([]int, 5)
+	s3 := make([]int, 5, 10)
+	fmt.Println(s3)
+	fmt.Println(len(s3))
+	fmt.Println(cap(s3))
+
+	fmt.Println(s2[3])
+	fmt.Println(append(s2, 6, 7, 8))
+
+	a := []int{1, 2}
+	b := []int{3, 4}
+	fmt.Println(append(a, b...))
+
+	for i := 0; i < len(s2); i++ {
+		fmt.Println(s2[i])
+	}
+
+	for i, v := range s2 {
+		fmt.Println(i, v)
+	}
+}

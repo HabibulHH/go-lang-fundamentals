@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println("Chapter 10: Concurrency")
+
+	ch := make(chan int)
+
+	go func() {
+		ch <- 42
+	}()
+
+	value := <-ch
+	fmt.Println(value)
+
+	fmt.Println("Bye")
+}
