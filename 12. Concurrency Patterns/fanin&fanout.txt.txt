@@ -1,0 +1,42 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+func worker(url string, resultChan chan string) {
+	time.Sleep(time.Millisecond * 50)
+	fmt.Printf("image processed: %s\n", url)
+	resultChan <- url
+}
+
+func main() {
+	urls := []string{
+		"url1",
+		"url2",
+		"url3",
+		"url4",
+		"url5",
+		"url6",
+	}
+
+	var wg sync.WaitGroup
+	resultChannel := make(chan string, 6)
+
+	startTime := time.Now()
+
+	for _, urlValue := range urls {
+		wg.Go(func() { worker(urlValue, resultChannel) })
+	}
+
+	wg.Wait()
+	close(resultChannel)
+
+	for resultChannelValue := range resultChannel {
+		fmt.Printf("Recieved %s \n", resultChannelValue)
+	}
+
+	fmt.Printf("It took %s ms", time.Since(startTime))
+}
